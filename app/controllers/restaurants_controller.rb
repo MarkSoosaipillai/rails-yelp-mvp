@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant.find(restaurant_params)
+    @restaurant = Restaurant.find(params[:id])
   end
 
   def new
@@ -12,8 +12,12 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    @restaurant.find(restaurant_params)
-    @restaurant.save
+    @restaurant = Restaurant.new(restaurant_params)
+    if @restaurant.save
+    redirect_to restaurant_path(@restaurant)
+    else
+      render :new
+    end
   end
 
   private

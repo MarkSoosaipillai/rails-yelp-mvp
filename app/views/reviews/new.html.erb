@@ -1,0 +1,3 @@
+<%= simple_form_for(@review) do |f| %>
+<%= f.input :rating, as: :select,  collection: 0..5 %>
+<%= f.input :content %>
