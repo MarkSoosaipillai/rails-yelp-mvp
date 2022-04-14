@@ -1,0 +1,7 @@
+
+<% @reviews.each do |r| %><ol>
+  <li><%= r.rating * '⭐' %>
+    <p><%= r.content %></p>
+  </li>
+</ol>
+<% end %>

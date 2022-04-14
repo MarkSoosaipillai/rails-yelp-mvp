@@ -1,5 +1,12 @@
 class ReviewsController < ApplicationController
+
+  def index
+    @restaurant = Restaurant.find(params[:restaurant_id])
+    @reviews = Review.where(restaurant_id: @restaurant)
+  end
+
   def new
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new
   end
 

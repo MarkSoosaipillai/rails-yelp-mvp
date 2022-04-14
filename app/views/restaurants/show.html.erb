@@ -2,3 +2,6 @@
 <h3><%= @restaurant.category %> food</h3>
 <h2>Address: <%= @restaurant.address %></h2>
 <h2>Contact: <%= @restaurant.phone_number %></h2>
+<%= link_to 'Back', restaurants_path  %>
+<%= link_to 'Add Review', new_restaurant_review_path(@restaurant)  %>
+<%= link_to 'Reviews', restaurant_reviews_path(@restaurant) %>

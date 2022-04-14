@@ -1,5 +1,7 @@
+<%= link_to 'Add Restaurant', new_restaurant_path, class: 'm-1 d-block btn btn-primary text-right'%>
 <% @restaurants.each do |r| %>
-  <h3><%= r.name %></h3>
-  <p><%= r.address %></p>
-  <p><%= r.category %></p>
+<div class="card m-1 p-1">
+  <h3><%= link_to r.name, restaurant_path(r), class: 'text-decoration-none' %></h3>
+  <p><%= r.category.capitalize %> food </p>
+  </div>
 <% end %>
